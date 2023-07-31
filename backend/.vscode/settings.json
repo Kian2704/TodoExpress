@@ -1,0 +1,4 @@
+{
+    "todo-tree.filtering.passGlobsToRipgrep": true,
+    "todo-tree.regex.regexCaseSensitive": false
+}
