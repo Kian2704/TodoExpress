@@ -1,16 +1,13 @@
-export default function SubmitButton({name="Submit",isEnabled=false})
-{
-
-    if(isEnabled)
-    {
-        return(
-            <input type="submit" className="btn btn-success btn-sm"  value={name}></input>
-        )
-    } else
-    {
-        return(
-            <input type="submit" className="btn btn-success btn-sm" disabled value={name}></input>
-        )
-    }
-    
+export default function SubmitButton({
+  name = "Submit",
+  isEnabled = false,
+  classes = "btn btn-success btn-sm",
+}) {
+  if (isEnabled) {
+    return <input type="submit" className={classes} value={name}></input>;
+  } else {
+    return (
+      <input type="submit" className={classes} disabled value={name}></input>
+    );
+  }
 }

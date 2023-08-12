@@ -64,12 +64,17 @@ app.get('/express_backend', (req, res) => { //Line 9
 }); //Line 11
 
 const api = require("./api");
-
 app.use('/api',api);
+const auth = require("./auth.js");
+app.use('/auth',auth);
 
 
-app.use(express.static(path.join(__dirname,'..','frontend','build')))
+if(process.env.NODE_ENV === 'production')
+{
+  app.use(express.static(path.join(__dirname,'..','frontend','build')))
 
 app.use('*',function(request,response) {
   response.sendFile(path.resolve(__dirname,'..','frontend','build','index.html'))
 })
+
+}
